@@ -5,11 +5,11 @@ const router = express.Router();
 const DATA_PATH = path.join(__dirname, '../../data/items.json');
 
 // GET /api/stats
-router.get('/', (req, res, next) => {
-  fs.readFile(DATA_PATH, (err, raw) => {
-    if (err) return next(err);
-
+router.get('/', async (req, res, next) => {
+  try {
+    const raw = await fs.readFile(DATA_PATH);
     const items = JSON.parse(raw);
+
     // Intentional heavy CPU calculation
     const stats = {
       total: items.length,
@@ -17,7 +17,9 @@ router.get('/', (req, res, next) => {
     };
 
     res.json(stats);
-  });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 module.exports = router;

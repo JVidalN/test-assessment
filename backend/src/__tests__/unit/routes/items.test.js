@@ -1,10 +1,14 @@
 const request = require('supertest');
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs').promises;
 const mockItems = require('../../../__mocks__/mockItems');
 
-jest.mock('fs')
+jest.mock('fs', () => ({
+  promises: {
+    readFile: jest.fn(),
+    writeFile: jest.fn()
+  }
+}));
 
 const createTestApp = () => {
   const app = express();
@@ -30,8 +34,8 @@ describe('Items API', () => {
     jest.clearAllMocks();
 
     ///Mock the return
-    fs.readFileSync.mockReturnValue(JSON.stringify(mockItems));
-    fs.writeFileSync.mockImplementation(() => { });
+    fs.readFile.mockResolvedValue(JSON.stringify(mockItems));
+    fs.writeFile.mockResolvedValue();
   });
 
   //GET
@@ -43,6 +47,7 @@ describe('Items API', () => {
 
       expect(response.body).toHaveLength(5);
       expect(response.body[0]).toEqual(mockItems[0]);
+      expect(fs.readFile).toHaveBeenCalledTimes(1);
     });
 
     test('should filter items by name', async () => {
@@ -103,11 +108,11 @@ describe('Items API', () => {
       expect(response.body.price).toBe(newItem.price);
 
       // Check if it tried to save into the file.
-      expect(fs.writeFileSync).toHaveBeenCalled();
+      expect(fs.writeFile).toHaveBeenCalled();
     });
 
     test('should handle file read error properly', async () => {
-      fs.readFileSync.mockImplementation(() => {
+      fs.readFile.mockResolvedValue(() => {
         throw new Error();
       });
 

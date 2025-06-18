@@ -29,9 +29,11 @@ describe('Stats API', () => {
     app = createTestApp();
     jest.clearAllMocks();
 
-    fs.readFileSync.mockReturnValue(JSON.stringify(mockItems));
-    fs.writeFileSync.mockImplementation(() => { });
+    fs.readFile.mockResolvedValue(JSON.stringify(mockItems));
+    fs.writeFile.mockResolvedValue();
   });
+
+  const expectedResult = { "averagePrice": 1179, "total": 5 };
 
   //GET
   describe('GET /api/stats', () => {
@@ -40,8 +42,7 @@ describe('Stats API', () => {
         .get('/api/stats')
         .expect(200);
 
-      expect(response.body).toHaveLength(5);
-      expect(response.body[0]).toEqual(mockItems[0]);
+      expect(response.body).toEqual(expectedResult);
     });
   });
 
