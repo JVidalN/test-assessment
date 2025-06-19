@@ -38,13 +38,31 @@ function ItemDetail() {
     return () => ctrl.abort();
   }, [id, navigate]);
 
-  if (!item) return <p>Loading...</p>;
+  if (!item) return (
+    <div className="flex items-center justify-center min-h-96">
+      <div className="text-gray-600 text-lg font-light">Loading...</div>
+    </div>
+  );
 
   return (
-    <div style={{ padding: 16 }}>
-      <h2>{item.name}</h2>
-      <p><strong>Category:</strong> {item.category}</p>
-      <p><strong>Price:</strong> ${item.price}</p>
+    <div className="max-w-2xl mx-auto px-6 py-12">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+        <h2 className="text-3xl font-light text-gray-900 mb-8 text-center">
+          {item.name}
+        </h2>
+
+        <div className="space-y-6">
+          <div className="border-b border-gray-100 pb-4">
+            <p className="text-gray-600 text-sm uppercase tracking-wide mb-2">Category</p>
+            <p className="text-gray-900 text-lg">{item.category}</p>
+          </div>
+
+          <div className="border-b border-gray-100 pb-4">
+            <p className="text-gray-600 text-sm uppercase tracking-wide mb-2">Price</p>
+            <p className="text-gray-900 text-2xl font-medium">${item.price}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
