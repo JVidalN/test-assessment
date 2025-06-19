@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useData } from '../state/DataContext';
 import { Link } from 'react-router-dom';
+import { FixedSizeList as List } from 'react-window';
 
 function Items() {
   const {
@@ -41,6 +42,16 @@ function Items() {
   if (loading) return <p>Loading...</p>;
   if (!Array.isArray(items)) return <p>Data not found</p>;
 
+  const Row = ({ index, style, data }) => {
+    const item = data[index];
+    return (
+      <div style={style} key={item.id}>
+        <Link to={'/items/' + item.id}>{item.name}</Link>
+      </div>
+    );
+  };
+
+
   return (
     <>
       <div>
@@ -53,18 +64,20 @@ function Items() {
         />
         <button onClick={handleSearchSubmit}>Search</button>
       </div>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <Link to={'/items/' + item.id}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <div>
+      <List
+        height={100}
+        itemCount={items.length}
+        itemSize={20}
+        width={'100%'}
+        itemData={items}
+      >
+        {Row}
+      </List>
+      <div style={{ marginTop: '1rem' }}>
         <button onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1}>
           Prev
         </button>
-        <span>
+        <span style={{ margin: '0 1rem' }}>
           Page {page} of {totalPages}
         </span>
         <button onClick={() => setPage(p => Math.min(p + 1, totalPages))} disabled={page === totalPages}>
