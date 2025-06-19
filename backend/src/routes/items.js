@@ -21,7 +21,7 @@ async function readData() {
 router.get('/', async (req, res, next) => {
   try {
     const data = await readData();
-    const { limit, q } = req.query;
+    const { limit, page, q } = req.query;
     let results = data;
 
     if (q) {
@@ -29,11 +29,22 @@ router.get('/', async (req, res, next) => {
       results = results.filter(item => item.name.toLowerCase().includes(q.toLowerCase()));
     }
 
-    if (limit) {
-      results = results.slice(0, parseInt(limit));
-    }
+    const total = results.length;
 
-    res.json(results);
+    //Handling pagination
+    let paginatedResults = results;
+    const limitNum = parseInt(limit) || 5;
+    const pageNum = parseInt(page) || 1;
+
+    const startIndex = (pageNum - 1) * limitNum;
+    const endIndex = startIndex + limitNum;
+
+    paginatedResults = results.slice(startIndex, endIndex);
+
+    res.json({
+      items: paginatedResults,
+      total,
+    });
   } catch (err) {
     next(err);
   }

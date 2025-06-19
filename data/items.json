@@ -1,7 +1,302 @@
 [
-  { "id": 1, "name": "Laptop Pro", "category": "Electronics", "price": 2499 },
-  { "id": 2, "name": "Noise Cancelling Headphones", "category": "Electronics", "price": 399 },
-  { "id": 3, "name": "Ultra‑Wide Monitor", "category": "Electronics", "price": 999 },
-  { "id": 4, "name": "Ergonomic Chair", "category": "Furniture", "price": 799 },
-  { "id": 5, "name": "Standing Desk", "category": "Furniture", "price": 1199 }
+  {
+    "id": 1,
+    "name": "Standing Desk #1",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 2,
+    "name": "Laptop Pro #2",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 3,
+    "name": "Noise Cancelling Headphones #3",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 4,
+    "name": "Ergonomic Chair #4",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 5,
+    "name": "Standing Desk #5",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 6,
+    "name": "Noise Cancelling Headphones #6",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 7,
+    "name": "Noise Cancelling Headphones #7",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 8,
+    "name": "Noise Cancelling Headphones #8",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 9,
+    "name": "Ergonomic Chair #9",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 10,
+    "name": "Standing Desk #10",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 11,
+    "name": "Ergonomic Chair #11",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 12,
+    "name": "Standing Desk #12",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 13,
+    "name": "Laptop Pro #13",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 14,
+    "name": "Standing Desk #14",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 15,
+    "name": "Ultra‑Wide Monitor #15",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 16,
+    "name": "Ergonomic Chair #16",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 17,
+    "name": "Noise Cancelling Headphones #17",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 18,
+    "name": "Ergonomic Chair #18",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 19,
+    "name": "Laptop Pro #19",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 20,
+    "name": "Laptop Pro #20",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 21,
+    "name": "Laptop Pro #21",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 22,
+    "name": "Noise Cancelling Headphones #22",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 23,
+    "name": "Standing Desk #23",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 24,
+    "name": "Laptop Pro #24",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 25,
+    "name": "Standing Desk #25",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 26,
+    "name": "Standing Desk #26",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 27,
+    "name": "Standing Desk #27",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 28,
+    "name": "Noise Cancelling Headphones #28",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 29,
+    "name": "Noise Cancelling Headphones #29",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 30,
+    "name": "Noise Cancelling Headphones #30",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 31,
+    "name": "Ergonomic Chair #31",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 32,
+    "name": "Standing Desk #32",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 33,
+    "name": "Laptop Pro #33",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 34,
+    "name": "Ultra‑Wide Monitor #34",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 35,
+    "name": "Ultra‑Wide Monitor #35",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 36,
+    "name": "Laptop Pro #36",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 37,
+    "name": "Ergonomic Chair #37",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 38,
+    "name": "Ultra‑Wide Monitor #38",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 39,
+    "name": "Ultra‑Wide Monitor #39",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 40,
+    "name": "Noise Cancelling Headphones #40",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 41,
+    "name": "Laptop Pro #41",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 42,
+    "name": "Ultra‑Wide Monitor #42",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 43,
+    "name": "Ergonomic Chair #43",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 44,
+    "name": "Laptop Pro #44",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 45,
+    "name": "Noise Cancelling Headphones #45",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 46,
+    "name": "Ultra‑Wide Monitor #46",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 47,
+    "name": "Laptop Pro #47",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 48,
+    "name": "Noise Cancelling Headphones #48",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 49,
+    "name": "Standing Desk #49",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 50,
+    "name": "Ultra‑Wide Monitor #50",
+    "category": "Electronics",
+    "price": 999
+  }
 ]

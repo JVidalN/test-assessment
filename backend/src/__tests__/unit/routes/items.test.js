@@ -45,8 +45,9 @@ describe('Items API', () => {
         .get('/api/items')
         .expect(200);
 
-      expect(response.body).toHaveLength(5);
-      expect(response.body[0]).toEqual(mockItems[0]);
+      expect(response.body.items).toHaveLength(5);
+      expect(response.body.total).toBe(mockItems.length);
+      expect(response.body.items[0]).toEqual(mockItems[0]);
       expect(fs.readFile).toHaveBeenCalledTimes(1);
     });
 
@@ -55,8 +56,8 @@ describe('Items API', () => {
         .get('/api/items?q=laptop')
         .expect(200);
 
-      expect(response.body).toHaveLength(1);
-      expect(response.body[0].id).toBe(1);
+      expect(response.body.items).toHaveLength(5);
+      expect(response.body.items[0].id).toBe(2);
     });
 
     test('should limit results', async () => {
@@ -64,7 +65,18 @@ describe('Items API', () => {
         .get('/api/items?limit=2')
         .expect(200);
 
-      expect(response.body).toHaveLength(2);
+
+      expect(response.body.items).toHaveLength(2);
+      expect(response.body.total).toBe(mockItems.length);
+    });
+
+    test('should paginate correctly', async () => {
+      const response = await request(app)
+        .get('/api/items?page=2&limit=2')
+        .expect(200);
+
+      expect(response.body.items).toHaveLength(2);
+      expect(response.body.items[0]).toEqual(mockItems[2]);
     });
   });
 

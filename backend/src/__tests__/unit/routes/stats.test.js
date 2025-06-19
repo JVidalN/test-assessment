@@ -33,7 +33,7 @@ describe('Stats API', () => {
     fs.writeFile.mockResolvedValue();
   });
 
-  const expectedResult = { "averagePrice": 1179, "total": 5 };
+  const expectedResult = { "averagePrice": 1197, "total": 50 };
 
   //GET
   describe('GET /api/stats', () => {
