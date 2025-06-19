@@ -69,8 +69,17 @@ router.get('/:id', async (req, res, next) => {
 // POST /api/items
 router.post('/', async (req, res, next) => {
   try {
-    // TODO: Validate payload (intentional omission)
     const item = req.body;
+
+    // TODO: Validate payload (intentional omission)
+    if (
+      typeof item.name !== 'string' || item.name.trim() === '' ||
+      typeof item.category !== 'string' || item.category.trim() === '' ||
+      typeof item.price !== 'number' || item.price <= 0
+    ) {
+      return res.status(400).json({ error: 'Invalid payload. All fields are required!' });
+    }
+
     const data = await readData();
     item.id = Date.now();
     data.push(item);
